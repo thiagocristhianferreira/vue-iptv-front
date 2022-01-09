@@ -1,18 +1,24 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ul style="list-style: none;">
+      <li v-for="(link, index) in LINKS" v-bind:key="index">
+          <a v-bind:href=link.lk target="_blank">
+            <button type="button" class="btn btn-primary mb-2">{{link.canal}}</button>
+          </a>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import LINKS from '../links/links';
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld,
+  },
+  data() {
+    return { LINKS };
   },
 };
 </script>
