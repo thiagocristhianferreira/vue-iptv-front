@@ -4,7 +4,7 @@
       <input
         id="toggle"
         type="checkbox"
-        :checked="(mode === 'dark') ? 'checked' : false"
+        :checked="(mode === 'dark') ? false : 'checked'"
         v-on:click="toggle"
       />
       <span class="toggler round"></span>
@@ -16,7 +16,7 @@
 export default {
   data() {
     return {
-      mode: 'light',
+      mode: 'dark',
     };
   },
   methods: {
